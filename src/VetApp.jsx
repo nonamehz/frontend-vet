@@ -1,7 +1,6 @@
 import {
     createBrowserRouter,
     RouterProvider,
-    Outlet,
     Navigate,
 } from 'react-router-dom';
 import { Login } from './pages/auth/Login';
@@ -12,7 +11,7 @@ import { Home } from './pages/home/Home';
 
 export const VetApp = () => {
 
-    const currentUser = true;
+    const currentUser = false;
 
     const Layout = () => {
         return (

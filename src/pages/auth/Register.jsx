@@ -20,7 +20,8 @@ export const Register = () => {
     const onRegister = async (event) => {
         event.preventDefault();
         try {
-            await registerUser(formValues);
+            const resp = await registerUser(formValues);
+            console.log(resp);
             navigate('/login');
         } catch (error) {
             console.log(error);
