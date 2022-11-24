@@ -1,15 +1,19 @@
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { loginUser } from '../../../api/auth.api';
 import { useForm } from '../../hooks/useForm';
+
 import './login.scss';
 
 
 export const Login = () => {
 
-    const { correo, password, formValues, onChangeInputValue } = useForm({
+    const { correo, password, formValues, onChangeInputValue, onResetForm } = useForm({
         correo: '',
         password: ''
     });
+
+    const [error, setError] = useState('');
 
     const navigate = useNavigate();
 
@@ -21,6 +25,9 @@ export const Login = () => {
             navigate('/');
         } catch (error) {
             console.log(error);
+            console.log(error.response.data.msg);
+            setError(error.response.data.msg);
+            onResetForm();
         }
     }
 
@@ -55,6 +62,8 @@ export const Login = () => {
                             value={password}
                             onChange={onChangeInputValue}
                         />
+
+                        {error && <p>{error}</p>}
 
                         <button type="submit">Ingresar</button>
                     </form>

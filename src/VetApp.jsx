@@ -32,7 +32,7 @@ export const VetApp = () => {
             path: '/',
             element: (
                 <ProtectedRoute>
-                    <Layout />
+                    <Home />
                 </ProtectedRoute>
             ),
             children: [
