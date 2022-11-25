@@ -84,9 +84,20 @@
                     font-weight: bold;
                     cursor: pointer;
                 }
+
+                .msg-error {
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    color: #FFFFFF;
+                    padding: 10px 20px;
+                    text-align: center;
+                    background-color: #F9575C;
+                }
             }
         }
 
     }
+
+
 
 }

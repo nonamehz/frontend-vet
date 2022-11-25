@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { registerUser } from '../../../api/auth.api';
 
@@ -7,13 +8,15 @@ import './register.scss';
 
 export const Register = () => {
 
-    const { nombre, apellido, correo, password, celular, formValues, onChangeInputValue } = useForm({
+    const { nombre, apellido, correo, password, celular, formValues, onChangeInputValue, onResetForm } = useForm({
         nombre: '',
         apellido: '',
         correo: '',
         password: '',
         celular: ''
     });
+
+    const [error, setError] = useState('');
 
     const navigate = useNavigate();
 
@@ -25,6 +28,9 @@ export const Register = () => {
             navigate('/login');
         } catch (error) {
             console.log(error);
+            console.log(error.response.data.errors[0].msg);
+            setError(error.response.data.errors[0].msg);
+            onResetForm();
         }
     }
 
@@ -51,6 +57,7 @@ export const Register = () => {
                             name='nombre'
                             value={nombre}
                             onChange={onChangeInputValue}
+                            required={true}
                         />
 
                         <input
@@ -59,14 +66,16 @@ export const Register = () => {
                             name='apellido'
                             value={apellido}
                             onChange={onChangeInputValue}
+                            required={true}
                         />
 
                         <input
-                            type="text"
+                            type="number"
                             placeholder='Celular'
                             name='celular'
                             value={celular}
                             onChange={onChangeInputValue}
+                            required={true}
                         />
 
                         <input
@@ -75,6 +84,7 @@ export const Register = () => {
                             name='correo'
                             value={correo}
                             onChange={onChangeInputValue}
+                            required={true}
                         />
 
                         <input
@@ -83,7 +93,10 @@ export const Register = () => {
                             name='password'
                             value={password}
                             onChange={onChangeInputValue}
+                            required={true}
                         />
+
+                        {error && <p className='msg-error'>{error}</p>}
 
                         <button type="submit">Registrarme</button>
                     </form>

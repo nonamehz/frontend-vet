@@ -11,7 +11,7 @@ import { Home } from './pages/home/Home';
 
 export const VetApp = () => {
 
-    const currentUser = false;
+    const currentUser = true;
 
     const Layout = () => {
         return (
@@ -32,7 +32,7 @@ export const VetApp = () => {
             path: '/',
             element: (
                 <ProtectedRoute>
-                    <Home />
+                    <Layout />
                 </ProtectedRoute>
             ),
             children: [

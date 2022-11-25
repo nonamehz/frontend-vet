@@ -48,11 +48,12 @@ export const Login = () => {
                     <h2>Iniciar Sesión</h2>
                     <form onSubmit={onLogin}>
                         <input
-                            type="text"
+                            type="email"
                             placeholder='Correo Electrónico'
                             name='correo'
                             value={correo}
                             onChange={onChangeInputValue}
+                            required={true}
                         />
 
                         <input
@@ -61,9 +62,10 @@ export const Login = () => {
                             name='password'
                             value={password}
                             onChange={onChangeInputValue}
+                            required={true}
                         />
 
-                        {error && <p>{error}</p>}
+                        {error && <p className='msg-error'>{error}</p>}
 
                         <button type="submit">Ingresar</button>
                     </form>
