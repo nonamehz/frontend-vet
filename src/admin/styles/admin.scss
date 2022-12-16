@@ -1,5 +1,7 @@
 .admin {
     display: flex;
+    height: 100vh;
+    overflow: hidden;
 
     &__aside {
         background-color: var(--secondaryColor);
@@ -84,4 +86,44 @@
     font-size: 2rem;
     font-weight: bold;
     text-transform: uppercase;
+}
+
+.form__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: calc(100vh - 160px);
+    align-items: center;
+    gap: 2rem;
+}
+
+.image__pet {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: dashed 2px var(--primaryColor);
+    height: 300px;
+    width: 100%;
+}
+
+.image__pet.active-drop {
+    border: solid 2px var(--primaryColor);
+}
+
+.image__pet p {
+    font-weight: bold;
+    color: var(--tertiaryColor);
+    margin-bottom: 10px;
+}
+
+.image__pet img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
