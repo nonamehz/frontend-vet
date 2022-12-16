@@ -1,7 +1,14 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 
 export const Aside = () => {
+
+    const navigate = useNavigate()
+
+    const onSignOut = () => {
+        navigate('/');
+    }
+
     return (
         <aside className="admin__aside">
             <nav className="admin__navbar">
@@ -52,7 +59,7 @@ export const Aside = () => {
                         Solicitudes
                     </Link>
                 </div>
-                <a className="admin__signOut">
+                <a onClick={onSignOut} className="admin__signOut">
                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-logout" width="24" height="24"
                         viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ffffff" fill="none" strokeLinecap="round"
                         strokeLinejoin="round">

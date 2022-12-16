@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
 
 export const Hero = () => {
@@ -6,7 +7,7 @@ export const Hero = () => {
             <div className="copy">
                 <h1>¡Adopta una <br />mascota hoy!</h1>
                 <p>Busca en nuestra lista de mascotas <br />disponibles para adopción cerca de ti</p>
-                <a className="button secondary">Adopta Ahora</a>
+                <Link className="button secondary" to="/mascotas">Adopta Ahora</Link>
             </div>
         </div>
     )

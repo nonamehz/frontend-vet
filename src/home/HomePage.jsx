@@ -1,3 +1,6 @@
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { getPets } from '../../api/auth.api';
 import { Footer, Header, Hero } from '../ui';
 
 import '../ui/styles/ui.scss';
@@ -7,6 +10,19 @@ import { SectionLayout } from './layout/SectionLayout';
 
 
 export const HomePage = () => {
+
+    const [pets, setPets] = useState([]);
+
+    useEffect(() => {
+
+        async function getDataPets() {
+            const resp = await getPets();
+            setPets(resp.data.mascotas)
+        }
+        getDataPets();
+
+    }, []);
+
     return (
         <>
 
@@ -31,7 +47,7 @@ export const HomePage = () => {
                         </ul>
                     </div>
                     <div className="services__img">
-                        <img src="/assets/img/ServicesImg.png" alt="Imagen Servicios" />
+                        <img src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" alt="Imagen Servicios" />
                     </div>
                 </div>
             </SectionLayout>
@@ -56,7 +72,7 @@ export const HomePage = () => {
                         </ul>
                     </div>
                     <div className="services__img">
-                        <img src="/assets/img/AboutImg.png" alt="Imagen Nosotros" />
+                        <img src="https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Imagen Nosotros" />
                     </div>
                 </div>
             </SectionLayout>
@@ -70,13 +86,13 @@ export const HomePage = () => {
 
                     <div className="adopt">
                         {
-                            ['enero', 'febrero', 'marzo'].map(mascota => (
-                                <PetCard key={mascota} />
+                            pets.slice(0, 3).map(pet => (
+                                <PetCard key={pet} {...pet} />
                             ))
                         }
                     </div>
 
-                    <a className="button primary">Ver más mascotas</a>
+                    <Link className="button primary" to="/mascotas">Ver más mascotas</Link>
                 </div>
             </SectionLayout>
 
