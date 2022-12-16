@@ -1,6 +1,6 @@
 
 
-export const PetRow = () => {
+export const PetRow = ({ nombre, edad, raza, estado, genero, propietario }) => {
     return (
         <tr>
             <td className="px-6 py-4 whitespace-nowrap">
@@ -9,25 +9,25 @@ export const PetRow = () => {
                         <img src="/assets/img/noImgPet.png" alt="No Imagen" />
                     </div>
                     <div className="ml-4">
-                        <div className="text-sm font-medium text-gray-900">Nombre</div>
+                        <div className="text-sm font-medium text-gray-900">{nombre}</div>
                     </div>
                 </div>
             </td>
             <td className="px-6 py-4 whitespace-nowrap">
-                <div className="text-sm text-gray-900">25</div>
+                <div className="text-sm text-gray-900">{edad}</div>
             </td>
             <td className="px-6 py-4 whitespace-nowrap">
-                <div className="text-sm text-gray-900">Jack Russell</div>
+                <div className="text-sm text-gray-900">{raza}</div>
             </td>
             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                Macho
+                {raza}
             </td>
             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                Jose Caballero
+                {propietario}
             </td>
             <td className="px-6 py-4 whitespace-nowrap">
                 <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                    Activo
+                    {(estado = 1) ? 'Activo' : 'Inactivo'}
                 </span>
             </td>
             <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5">

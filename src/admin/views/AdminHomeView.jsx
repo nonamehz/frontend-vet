@@ -1,7 +1,22 @@
+import { useEffect, useState } from 'react';
+import { getPets } from '../../../api/auth.api';
 import { PetCard } from '../../home/components/PetCard';
 
 
 export const AdminHomeView = () => {
+
+    const [pets, setPets] = useState([]);
+
+    useEffect(() => {
+
+        async function getDataPets() {
+            const resp = await getPets();
+            setPets(resp.data.mascotas)
+        }
+        getDataPets();
+
+    }, []);
+
     return (
         <main className='main'>
             <h1 className="title">Inicio</h1>
@@ -10,8 +25,8 @@ export const AdminHomeView = () => {
 
                 <div className="adopt">
                     {
-                        ['enero', 'febrero', 'marzo'].map(mascota => (
-                            <PetCard key={mascota} />
+                        pets.map(pet => (
+                            <PetCard key={pet} {...pet} />
                         ))
                     }
                 </div>
