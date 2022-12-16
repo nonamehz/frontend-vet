@@ -4,6 +4,7 @@ import { AdminRouter } from '../admin/router/AdminRouter';
 import { LoginPage, RegisterPage } from '../auth';
 import { HomePage } from '../home/HomePage';
 import { PetProfile } from '../home/pages/PetProfile';
+import { PetsHome } from '../home/pages/PetsHome';
 // import { HomePage } from '../home/HomePage';
 
 
@@ -19,6 +20,7 @@ export const AppRouter = () => {
             <Route path='/admin/*' element={<AdminRouter />} />
             <Route path='/' element={<HomePage />} />
             <Route path='/mascota/:id' element={<PetProfile />} />
+            <Route path='/mascotas' element={<PetsHome />} />
 
             <Route path='/*' element={<Navigate to='/' />} />
         </Routes>
