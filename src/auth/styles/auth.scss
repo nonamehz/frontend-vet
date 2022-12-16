@@ -1,4 +1,4 @@
-.login {
+.auth {
 
     height: 100vh;
     background-color: #FBF4DE;
@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
 
-    .card {
+    &__card {
         overflow: hidden;
         width: 50%;
         min-height: 600px;
