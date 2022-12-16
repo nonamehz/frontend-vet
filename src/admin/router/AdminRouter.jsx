@@ -3,6 +3,7 @@ import { Aside } from '../components';
 
 import { AdminHomeView, AdminMascotasView, AdminFormView, AdminSolicitudesView } from '../views';
 
+import '../styles/admin.scss';
 
 export const AdminRouter = () => {
     return (

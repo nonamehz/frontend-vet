@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom"
 
 
-export const PetCard = ({ nombre, genero, edad, raza }) => {
+export const PetCard = ({ id, nombre, genero, edad, raza }) => {
     return (
         <div className="adopt__card">
             <div className="adopt__img">
@@ -12,7 +13,7 @@ export const PetCard = ({ nombre, genero, edad, raza }) => {
                 <p>Edad: <span>{edad}</span></p>
                 <p>Raza: <span>{raza}</span></p>
             </div>
-            <a className="button secondary mb">Más Información</a>
+            <Link className="button secondary mb" to={`/mascota/${id}`}>Más Información</Link>
         </div>
     )
 }
