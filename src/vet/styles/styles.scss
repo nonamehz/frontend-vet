@@ -1,0 +1,96 @@
+/* Perfil Mascota */
+
+.pet__profile {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.pet__img {
+    height: 700px;
+    width: 700px;
+    padding: 2rem;
+    background-color: var(--backgroundColor);
+}
+
+.pet__img img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.pet__description {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--backgroundColor);
+    padding: 2rem;
+}
+
+.pet__description h4 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.pet__description p {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.pet__description span {
+    font-weight: normal;
+}
+
+.adopt {
+    width: 100%;
+    place-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, max(400px));
+    gap: 1.5rem;
+    margin: 20px 0px;
+
+    &__card {
+        padding: 40px;
+        background-color: var(--backgroundColor);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__img {
+        width: 300px;
+        height: 300px;
+
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__description {
+        margin-bottom: 20px;
+
+        h4 {
+            font-size: 1.5rem;
+            text-align: center;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        p {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        span {
+            font-weight: normal;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .adopt__img {
+        width: 200px;
+        height: 200px;
+    }
+}

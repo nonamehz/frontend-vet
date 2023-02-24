@@ -1,0 +1,230 @@
+.admin {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+
+    &__aside {
+        background-color: var(--secondaryColor);
+        padding: 0;
+        height: 100vh;
+        max-width: 200px;
+    }
+
+    &__navbar {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+
+        &-brand {
+            color: #FFFFFF;
+            font-weight: bold;
+            font-size: 2rem;
+            margin: 20px 0px;
+        }
+
+        &-links {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        &-link {
+            display: flex;
+            align-items: center;
+            color: #FFFFFF;
+            font-size: 1rem;
+            font-weight: bold;
+            padding: 2em;
+
+            &:hover {
+                cursor: pointer;
+                background-color: var(--primaryColor);
+            }
+
+            svg {
+                margin-right: 10px;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+    }
+}
+
+.admin__signOut {
+    width: 100%;
+    color: #FFFFFF;
+    padding: 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+        background-color: var(--primaryColor);
+    }
+}
+
+.active-admin {
+    background-color: var(--primaryColor);
+}
+
+.main {
+    padding: 20px 60px;
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.title {
+    margin: 20px 0;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.form__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: calc(100vh - 160px);
+    align-items: center;
+    gap: 2rem;
+}
+
+.image__pet {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: dashed 2px var(--primaryColor);
+    height: 300px;
+    width: 100%;
+}
+
+.image__pet.active-drop {
+    border: solid 2px var(--primaryColor);
+}
+
+.image__pet p {
+    font-weight: bold;
+    color: var(--tertiaryColor);
+    margin-bottom: 10px;
+}
+
+.image__pet img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/*TABLE*/
+.rwd-table {
+    margin: auto;
+    min-width: 300px;
+    max-width: 100%;
+    border-collapse: collapse;
+}
+
+.rwd-table tr:first-child {
+    border-top: none;
+    background: var(--secondaryColor);
+    color: #fff;
+}
+
+.rwd-table tr {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    background-color: #FFFFFF;
+}
+
+.rwd-table tr:nth-child(odd):not(:first-child) {
+    background-color: #faebd1;
+}
+
+.rwd-table th {
+    display: none;
+}
+
+.rwd-table td {
+    display: block;
+}
+
+.rwd-table td:first-child {
+    margin-top: .5em;
+}
+
+.rwd-table td:last-child {
+    margin-bottom: .5em;
+}
+
+.rwd-table td:before {
+    content: attr(data-th) ": ";
+    font-weight: bold;
+    width: 120px;
+    display: inline-block;
+    color: #000;
+}
+
+.rwd-table th,
+.rwd-table td {
+    text-align: center;
+}
+
+.rwd-table {
+    color: rgb(79, 78, 78);
+    border-radius: .4em;
+    overflow: hidden;
+}
+
+.rwd-table th,
+.rwd-table td {
+    padding: .5em 1em;
+}
+
+@media screen and (max-width: 601px) {
+    .rwd-table tr:nth-child(2) {
+        border-top: none;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .rwd-table tr:hover:not(:first-child) {
+        background-color: #ffd689;
+    }
+
+    .rwd-table td:before {
+        display: none;
+    }
+
+    .rwd-table th,
+    .rwd-table td {
+        display: table-cell;
+        padding: .25em .5em;
+    }
+
+    .rwd-table th:first-child,
+    .rwd-table td:first-child {
+        padding-left: 0;
+    }
+
+    .rwd-table th:last-child,
+    .rwd-table td:last-child {
+        padding-right: 0;
+    }
+
+    .rwd-table th,
+    .rwd-table td {
+        padding: 1em !important;
+    }
+}

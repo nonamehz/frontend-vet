@@ -1,0 +1,107 @@
+.auth {
+
+    height: 100vh;
+    background-color: #FBF4DE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__card {
+        overflow: hidden;
+        width: 50%;
+        min-height: 600px;
+        display: flex;
+        background-color: white;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+
+        .left {
+
+            flex: 1;
+            background: linear-gradient(rgba(39, 11, 96, 0.5), rgba(39, 11, 96, 0.5)), url('https://images.unsplash.com/photo-1537151769678-eb003fb3a153?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTQzfHxkb2dzJTIwYW5kJTIwY2F0c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60') center;
+            background-size: cover;
+            padding: 50px;
+            display: none;
+            flex-direction: column;
+            gap: 30px;
+            color: white;
+
+            h1 {
+                font-size: 100px;
+                line-height: 100px;
+            }
+
+            // p {}
+
+            span {
+                font-size: 14px;
+            }
+
+            button {
+                width: 50%;
+                padding: 10px;
+                border: none;
+                color: #F9575C;
+                font-weight: bold;
+                cursor: pointer;
+            }
+        }
+
+        .right {
+
+            flex: 1;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            justify-content: center;
+
+            h2 {
+                color: #555;
+            }
+
+            form {
+
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+
+                input {
+                    border: none;
+                    border-bottom: 1px solid lightgray;
+                    padding: 20px 10px;
+                }
+
+                button {
+                    width: 50%;
+                    padding: 10px;
+                    border: none;
+                    background-color: #F9575C;
+                    color: white;
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+
+                .msg-error {
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    color: #FFFFFF;
+                    padding: 10px 20px;
+                    text-align: center;
+                    background-color: #F9575C;
+                }
+            }
+        }
+
+    }
+
+}
+
+@media (min-width: 768px) {
+    .auth .left {
+        display: flex;
+    }
+}
